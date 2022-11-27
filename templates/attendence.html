@@ -1,0 +1,127 @@
+{% extends 'base.html' %} 
+{% block title %} Attendence {% endblock title%}
+{% block head %}
+
+<h1>Your Attendence</h1>
+
+
+    
+
+<div class="container mt-1">
+  <div class="row">
+    <div class="col-md-3"></div>
+
+    <div class="col-md-6">
+      {% for message in messages %}
+      <div
+        class="alert alert-{{message.tags}} alert-dismissible fade show"
+        role="alert"
+      >
+        <strong></strong> {{message}}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} 
+
+      <form action="/attendence" method="post">
+        {% csrf_token %}
+
+
+        <div class="form-group">
+          <input
+            type="number"
+            class="form-control mt-2"
+            name="PhoneNumber"
+            value="{{user.username}}"
+            placeholder="Enter Your Number"
+            required
+            readonly
+          />
+        </div>
+        
+
+        
+
+        <div class="form-group">    
+
+          <select class="form-control mt-2" id="workout" name="workout" required>
+            <option selected>Select Workout</option>
+            <option value="Biceps">Biceps</option>
+            <option value="Triceps">Triceps</option>
+            <option value="Shoulders">Shoulders</option>
+            <option value="Chest">Chest</option>
+            <option value="Abs">Abs</option>
+            <option value="Back">Back</option>
+            <option value="Legs">Legs</option>
+          </select>
+        </div>
+
+        
+
+        
+
+        <div class="form-group">
+        <label for='comein' class="text-white">log in</label>
+          <input
+            type="time"
+            class="form-control mt-2"
+            name="comein"
+            placeholder="come time"
+            id = "comein"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+        <label for='out' class="text-white">log out</label>
+          <input
+            type="time"
+            class="form-control mt-2"
+            name="out"
+            id = "out"
+            placeholder="out time"
+            required
+          />
+        </div>
+
+
+        
+        <div class="form-group">
+           
+                     <select  class="form-control mt-2" id="trainer" name="trainer"  required>
+                     <option selected> Select Trainer </option>
+                          {% for  p in SelectTrainer %}
+                          
+
+<option value="{{p.name}}">{{p.name}} - {{p.salary}} Salary</option>
+{% endfor %}
+
+</select>
+                
+
+
+            </div>
+
+            
+
+            
+
+                                                      
+
+
+        <br />
+        <div class="d-grid gap-2">
+          <button class="btn btn-warning" type="submit">Apply Attendence</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+{% endblock head %}

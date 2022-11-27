@@ -1,0 +1,95 @@
+{% extends "base.html" %}\
+
+
+{% block title %}
+Your Profile 
+{% endblock title %}
+
+
+{% block body %}
+
+<h1 class="ml-2">Your Enrollment Details</h1>
+
+
+<div class="container">
+
+    <div class="row">
+    
+    <div class="col-md-4">
+    
+   
+
+    {% for post in posts %}
+
+    <ul class="list-group">
+        <li class="list-group-item bg-dark text-white"><h5>Name: {{ post.FullName }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>Email: {{ post.Email }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>Gender: {{ post.Gender }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>DOB: {{ post.DOB }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>Membership plan: {{ post.SelectMembershipplan }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>Trainer: {{ post.SelectTrainer }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>Address: {{ post.Address }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>payment status: {{ post.paymentStatus }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>Amount paid: {{ post.Price }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>upcoming due date: {{ post.DueDate }}</h5></li>
+        <li class="list-group-item bg-dark text-white"><h5>joining date: {{ post.timeStamp }}</h5></li>
+    
+      </ul>
+      {% endfor %}
+    
+
+
+    
+    
+    </div>
+    
+    <div class="col-md-8">
+
+
+      <div><Center><h2 class="display-4 mt-3"><b>Attendance Data</b></h2></Center></div>
+
+  
+      
+      <table class="table">
+        <thead class="thead-warning">
+          <tr>
+          
+            <th scope="col" class="text-warning">Date</th>
+            <th scope="col" class="text-warning">com in</th>
+            <th scope="col" class="text-warning">out</th>
+            <th scope="col" class="text-warning">Workout</th>
+            <th scope="col" class="text-warning">TrainedBy</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for attend in attendence  %}
+          <tr>
+            
+            <td class="text-warning">{{attend.date}}</td>
+            <td class="text-warning">{{attend.come}}</td>
+            <td class="text-warning">{{attend.out}}</td>
+            <td class="text-warning">{{attend.workout}}</td>
+            <td class="text-warning">{{attend.trainedby}}</td>
+            
+           
+         
+            
+           
+          </tr>
+          {% endfor %}
+        
+        </tbody>
+      </table>
+    
+    
+    </div>
+    
+    
+    
+    
+    
+    </div>
+
+
+    {% endblock body %}

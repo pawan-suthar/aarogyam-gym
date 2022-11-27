@@ -1,0 +1,437 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Arogyam</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/assets/img/favicon.png" rel="icon">
+  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/style.css" rel="stylesheet">
+
+  
+
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="/">Arogyam Gym<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#services">Services</a></li>
+          
+          <li><a class="nav-link scrollto" href="/contact">Contact</a></li>
+          <li class="dropdown"><a href=""><span>Membership</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/enroll">Enroll</a></li>
+              <li><a href="/attendence">Apply Attendence</a></li>
+              
+              <li><a href="/profile">View Profile</a></li>
+            </ul>
+          </li>
+
+        {% if not request.user.is_authenticated %}
+
+          <li><a class="nav-link scrollto" href="/signin">Signin</a></li>
+         {% else %}
+         <li><a class="nav-link scrollto" href="/logout">Logout</a></li>
+        {% endif %}
+
+
+
+
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      {% if request.user.is_authenticated %}
+      <a href="/" class="get-started-btn scrollto">Welcome Beast</a>
+      {% endif %}
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h1>Make your body the sexiest outfit you own<span>.</span></h1>
+          <h2>join Arogyam today</h2>
+        </div>
+      </div>
+
+
+
+      <style>
+        .icon-box{
+          padding: 0px!important;
+        }
+        .icon-box .card{
+          border: none;
+        }
+        .icon-box .card .card-img{
+          border: none;
+          border-radius: 0cm;
+        }
+      </style>
+      <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+            <div class="card" style="height: 100%; width: auto;">
+              <img src="static/assets/img/tricep.jpg" class="card-img" style="height:100%; width: auto; alt="...">  
+            </div>
+          </div>
+          <h3><a href="">Tricep</a></h3>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+            <div class="card" style="height: 100%; width: auto;">
+              <img src="static/assets/img/back.jpg" class="card-img" style="height:100%; width: auto; alt="...">  
+            </div>
+          </div>
+          <h3><a href="">Back</a></h3>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+            <div class="card" style="height: 100%; width: auto;">
+              <img src="static/assets/img/shoulder.jpg" class="card-img" style="height:100%; width: auto; alt="...">  
+            </div>
+          </div>
+          <h3><a href="">Shoulder</a></h3>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+            <div class="card" style="height: 100%; width: auto;">
+              <img src="static/assets/img/leg.jpg" class="card-img" style="height:100%; width: auto; alt="...">  
+            </div>
+          </div>
+          <h3><a href="">Leg</a></h3>
+        </div>
+        <div class="col-xl-2 col-md-4">
+          <div class="icon-box">
+            <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+            <div class="card" style="height: 100%; width: auto;">
+              <img src="static/assets/img/chest.jpg" class="card-img" style="height:100%; width: auto; alt="...">  
+            </div>
+          </div>
+          <h3><a href="">Chest</a></h3>
+        </div>
+        
+        
+        
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <video class="img-fluid" loop controls muted autoplay> 
+              <source src="static/assets/video/video_in.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    {% comment %} <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="static/assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Clients Section --> {% endcomment %}
+
+
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Check our Services</p>
+        </div>
+
+        <div class="row">
+          <style>
+            .framess{
+              overflow: hidden;
+              margin-bottom: 25px;
+              
+            }
+          </style>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch framess" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+              <div class="card" style="height: auto; width: 100%;">
+                <img src="static/assets/img/wg.jpg" class="card-img" style="height:auto; width: 100%; alt="...">  
+              </div>
+              
+            </div>
+            
+          </div>
+          
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch framess" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+              <div class="card" style="height: auto; width: 100%;">
+                <img src="static/assets/img/wl.jpg" class="card-img" style="height:auto; width: 100%; alt="...">  
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch framess" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+              <div class="card" style="height: auto; width: 100%;">
+                <img src="static/assets/img/cardio.jpg" class="card-img" style="height:auto; width: 100%; alt="...">  
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch framess" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+              <div class="card" style="height: auto; width: 100%;">
+                <img src="static/assets/img/back.jpg" class="card-img" style="height:auto; width: 100%; alt="...">  
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>Energize your life today</h3>
+          
+          <a class="cta-btn" href="tel:9166595772">Call To Join Today</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+     <!-- <section id="gallery" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Gallery</h2>
+          <p>Our Space</p>
+        </div>
+
+        <div class="row">
+          <style>
+            .framess{
+              overflow: hidden;
+              margin-bottom: 25px;
+              
+            }
+          </style>
+
+          {% for post in posts %}
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch framess" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <!-- <img class="card-img" src="static/assets/img/tricep.jpg" alt="tricep" style="height:100%; width: auto;"> -->
+              <div class="card" style="height: auto; width: 100%;">
+                {% comment %} <img src="{{post.img.url}}" class="card-img" style="height:auto; width: 100%; alt="...">   {% endcomment %}
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">Uploaded on: {{post.timestamp}} </p>
+              </div>
+            </div> 
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section> -->
+    
+
+    <!-- ======= Portfolio Section ======= -->
+
+
+    <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=674&amp;height=446&amp;hl=en&amp;q=Arogyam Gym&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://mcpenation.com/">https://mcpenation.com</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:446px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:446px;}.gmap_iframe {height:446px!important;}</style></div>
+   
+
+    
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Arogyam Gym<span>.</span></h3>
+              <p>
+                Above Sagarmal Sweets, Jassusar Gate<br>
+                Bikaner, Rajasthan (334001)<br><br>
+                <strong>Phone:</strong>+91 9166595772<br>
+                {% comment %} <strong>Email:</strong> info@example.com<br> {% endcomment %}
+              </p>
+              {% comment %} <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div> {% endcomment %}
+            </div>
+          </div>
+
+          {% comment %} <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div> {% endcomment %}
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Weight gain</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Weight loss</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Cardio</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Weight lifting</a></li>
+
+             
+            </ul>
+          </div>
+          
+
+          <style>
+            .footr{
+              text-align: right;
+            }
+          </style>
+          <div class="col-lg-6 col-md-6 footr">
+            <img src="static/assets/img/favicon2.png" alt="main_logo" style="width: 300px; height:auto;">
+            {% comment %} <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form> {% endcomment %}
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Aarogyam Gym</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        Designed by <a href="https://www.linkedin.com/in/pawan-suthar-70a501212/">pawan suthar</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/aos/aos.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>
